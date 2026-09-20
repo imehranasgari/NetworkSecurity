@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 import mlflow
 import mlflow.sklearn
+from typing import Any
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier

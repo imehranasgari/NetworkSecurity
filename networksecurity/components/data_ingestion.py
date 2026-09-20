@@ -3,6 +3,7 @@ import sys
 import numpy as np
 import pandas as pd
 import pymongo
+from typing import Any
 from typing import List
 from sklearn.model_selection import train_test_split
 from dotenv import load_dotenv
@@ -22,7 +23,7 @@ class DataIngestion:
         try:
             self.data_ingestion_config = data_ingestion_config
         except Exception as e:
-            raise NetworkSecurityException(e, sys)
+            raise NetworkSecurityException(e, sys) # type: ignore
 
     def export_collection_as_dataframe(self) -> pd.DataFrame:
         """
