@@ -1,7 +1,7 @@
 <div align="center">
 
-# 🛡️ Network Security & Phishing Detection System
-### *Production-Ready End-to-End MLOps Pipeline for Malicious URL & Phishing Classification*
+# 🛡️ Network Security — Phishing Detection System
+### *Production-Ready End-to-End MLOps Pipeline for Phishing Classification*
 
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
@@ -13,6 +13,7 @@
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
+  <a href="#dataset">Dataset</a> •
   <a href="#system-architecture">System Architecture</a> •
   <a href="#model-evaluation--benchmarks">Model Evaluation</a> •
   <a href="#project-structure">Project Structure</a> •
@@ -27,15 +28,21 @@
 
 ## 📌 Overview
 
-The **Network Security Phishing Detection** system is an enterprise-grade, end-to-end Machine Learning solution designed to classify malicious and phishing URLs. Phishing attacks and fraudulent web targets pose significant cybersecurity risks; this platform automates data ingestion, schema validation, data drift detection, distributed model training, experiment tracking, and low-latency serving of predictive models.
+The **Network Security Phishing Detection** system is an end-to-end Machine Learning solution designed to classify malicious and phishing URLs based on structural webpage characteristics. This defensive security platform automates data ingestion, schema validation, data drift detection, distributed model training, experiment tracking, and low-latency RESTful inference.
 
 Built with modular software engineering principles, the system decouples configuration, logging, custom exceptions, and artifact persistence into robust production pipelines.
 
 ---
 
+## 📂 Dataset
+
+This project utilizes a standard, publicly available academic benchmark dataset for phishing website detection (sourced from public repositories such as the UCI Machine Learning Repository). It contains 30 anonymized URL and webpage structure features used exclusively for defensive classification research and educational purposes.
+
+---
+
 ## ✨ Key Features
 
-- **Automated Data Ingestion:** Extracts raw URL feature sets from MongoDB and synchronizes with local/cloud feature stores.
+- **Automated Data Ingestion:** Extracts feature sets from MongoDB and synchronizes with local/cloud feature stores.
 - **Data Validation & Drift Detection:** Validates column counts, data types, and uses statistical distance checks (Kolmogorov-Smirnov test) against schema definitions (`schema.yaml`) to capture data drift.
 - **Robust Transformation Engine:** Applies `KNNImputer` for missing values and robust scaling, serializing the fitted preprocessor pipeline for reproducible inference.
 - **Model Training & Hyperparameter Tuning:** Automated training and benchmarking across multiple classifiers (Random Forest, Gradient Boosting, XGBoost, CatBoost, AdaBoost, Logistic Regression) with GridSearchCV.
@@ -217,7 +224,8 @@ Run the container:
 ```bash
 docker run -p 8000:8000 --env-file .env networksecurity:latest
 ```
-
+## 📚 Acknowledgements & References
+- Project architecture inspired by the *Complete MLOps Bootcamp* curriculum, extended with custom MLflow experiment tracking, DAGsHub integrations, and modular pipeline design.
 ---
 
 ## 👤 Author
