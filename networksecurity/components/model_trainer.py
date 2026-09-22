@@ -161,6 +161,8 @@ class ModelTrainer:
 
             model_trainer_artifact = self.train_model(x_train, y_train, x_test, y_test)
             return model_trainer_artifact
+            print(f"Best Model: {best_model_name}")
+            print(f"Accuracy Score: {best_model_score:.4f}")
 
         except Exception as e:
             raise NetworkSecurityException(e, sys)
